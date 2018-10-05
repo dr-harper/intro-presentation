@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A life in graphics</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Michael Harper" />
+    <script src="libs/htmlwidgets-1.2/htmlwidgets.js"></script>
+    <script src="libs/jquery-1.12.4/jquery.min.js"></script>
+    <link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet-1.3.1/leaflet.js"></script>
+    <link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+    <script src="libs/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+    <script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+    <link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+    <script src="libs/leaflet-binding-2.0.2/leaflet.js"></script>
+    <script src="libs/leaflet-providers-1.1.17/leaflet-providers.js"></script>
+    <script src="libs/leaflet-providers-plugin-2.0.2/leaflet-providers-plugin.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# A life in graphics
+### Michael Harper
+### 05 October, 2018
+
+---
+
+
+
+
+# My History
+
+- Who wants to go through my CV line by line?
+
+&lt;img src="images/cv.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# My Timeline
+
+- The pathway to an "Implementation Analyst"
+
+&lt;img src="introPresentation_files/figure-html/unnamed-chunk-2-1.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# My PhD
+
+.center["*Spatial planning scale for regional renewable energy supply in the UK context*"]
+
+&lt;img src="images/phdwordcloud.png" width="45%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Wind Turbine Planning Acceptance
+
+.pull-left[
+- Onshore wind has the lowest acceptance rates of onshore wind
+- An abundance of GIS models to locate sites, but few tried to understand acceptance rates
+
+
+&lt;img src="images/wind_turbine_protest.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+&lt;img src="introPresentation_files/figure-html/acceptanceRates-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## Can we predict site acceptance?
+
+.pull-left[
+- Over 1700 previous planning applications between 1990 and 2015
+- Collected over 30 geospatial covariates
+    - Political
+    - Socio-demographic
+    - Geospatial proximity
+- Logistic regression model to assess likelihood of planning acceptance
+- Geospatial parameters in isolation are not great predictors
+- Coming to a journal near you soon (hopefully)
+]
+
+.pull-right[
+&lt;img src="images/turbineMap.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+## Locating Wind Turbines
+
+&lt;img src="images/gismcda.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+?
+- Assessing planning acceptance, economic viability and legislative constraints.
+- Formed a geospatial multi-criteria decision analysis model (GIS MCDA).
+- Based on outputs of first layer of analysis.
+
+---
+
+## Spatial Scale in Energy Systems
+
+- Energy systems are inherently spatial: demand and supply rarely happen at the same place.
+
+&lt;img src="images/supplyDemand.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+- How do cities meet renewable energy targets in the future?
+
+## Assessing Spatial Scale
+
+- Most models assume a fixed spatial scale i.e. How much renewable energy can we supply in Hampshire?
+- 
+
+
+&lt;img src="images/ENSA.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+class: inverse, center, middle
+
+# Life Outside the PhD
+
+---
+
+# International Development
+
+.pull-left[
+
+### Cameroon Catalyst
+
+- Trustee.
+- Help construct water resources in Eastern Cameroon
+- Visited in 2014 to conducted surveys of water resources.
+
+### Energy for Development (E4D)
+
+- Build solar electrification projects in off-grid villages
+- Surveyed sites for new projects in 2017 and 2018
+]
+
+.pull-right[
+<div id="htmlwidget-1a6198225871765914f8" style="width:100%;height:460px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1a6198225871765914f8">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[1,20],3,[]],"calls":[{"method":"addProviderTiles","args":["Esri.NatGeoWorldMap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMarkers","args":[[3.52,-1.16,1.3733],[11.31,36.48,32.2903],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Cameroon","Kenya","Uganda"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-1.16,3.52],"lng":[11.31,36.48]}},"evals":[],"jsHooks":[]}</script>
+]
+
+---
+
+# SAVE Project
+
+- Real-time electricity consumption analysis of 4000 households in Southampton
+
+&lt;img src="images/worldCup.gif" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Skills
+
+&lt;img src="introPresentation_files/figure-html/unnamed-chunk-10-1.png" width="45%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# R
+
+.pull-left[
+
+- Literate programming
+- R packages
+
+
+]
+
+.pull-right[
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="https://github.com/dr-harper/ggmapstyles/raw/master/man/figures/README-maps-1.png" alt="ggmapstyles pacakge" width="60%" /&gt;
+&lt;p class="caption"&gt;ggmapstyles pacakge&lt;/p&gt;
+&lt;/div&gt;
+]
+
+---
+
+class: inverse, center, middle
+
+# Thank You
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="images/rmarkdown.png" alt="This presentation was brought to you by R Markdown" width="50%" /&gt;
+&lt;p class="caption"&gt;This presentation was brought to you by R Markdown&lt;/p&gt;
+&lt;/div&gt;
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

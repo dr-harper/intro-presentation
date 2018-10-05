@@ -1,0 +1,5 @@
+﻿Shading,Xmin,Xmax,Ymin,Ymax
+Red,0,5,0,5
+Yellow,0,5,5,10
+Yellow,5,10,0,5
+Green,5,10,5,10
