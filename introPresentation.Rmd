@@ -194,7 +194,6 @@ knitr::include_graphics("images/supplyDemand.png")
 - Most models assume a fixed spatial scale i.e. How much renewable energy can we supply in Hampshire?
 - What scale is required for renewable energy demand to meet supply?
 
-$$\text{find } n\ \text{where}\ \sum_{j=1}^{n} E_{Demand} - E_{Supply} = 0$$
 
 ```{r, out.width = "50%"}
 knitr::include_graphics("images/ENSA.png")
@@ -255,7 +254,7 @@ knitr::include_graphics("images/worldCup.gif")
 
 # Skills
 
-```{r, fig.asp=1, out.width = "45%"}
+```{r, fig.asp=1.1, out.width = "45%"}
 
 shading <- read_csv("data/shading.csv")
 interests <- read_csv("data/skillsInterests.csv")
@@ -270,7 +269,8 @@ p <-
   scale_y_continuous(limits = c(0,10)) +
   theme(legend.position = "none") +
   theme(panel.background = element_rect(fill = "#E9EDEE"),
-        plot.background = element_rect(fill = "#E9EDEE", colour = "#E9EDEE"))
+        plot.background = element_rect(fill = "#E9EDEE", colour = "#E9EDEE"),
+        panel.grid = element_blank())
 p
 ```
 
@@ -302,5 +302,4 @@ class: inverse, center, middle
 knitr::include_graphics("images/rmarkdown.png")
 ```
 
-This presentation was brought to you by R Markdown
 https://dr-harper.github.io/intro-presentation/introPresentation.html
