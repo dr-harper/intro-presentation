@@ -45,10 +45,11 @@ class: center, middle, inverse, title-slide
 &lt;img src="introPresentation_files/figure-html/unnamed-chunk-2-1.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 ---
+class: center
 
 # My PhD
 
-.center["*Spatial planning scale for regional renewable energy supply in the UK context*"]
+"*Spatial planning scale for regional renewable energy supply in the UK context*"
 
 &lt;img src="images/phdwordcloud.png" width="45%" style="display: block; margin: auto;" /&gt;
 
@@ -94,26 +95,23 @@ class: center, middle, inverse, title-slide
 
 &lt;img src="images/gismcda.png" width="80%" style="display: block; margin: auto;" /&gt;
 
-?
-- Assessing planning acceptance, economic viability and legislative constraints.
-- Formed a geospatial multi-criteria decision analysis model (GIS MCDA).
-- Based on outputs of first layer of analysis.
-
 ---
 
 ## Spatial Scale in Energy Systems
 
 - Energy systems are inherently spatial: demand and supply rarely happen at the same place.
+- How do cities meet renewable energy targets in the future?
 
 &lt;img src="images/supplyDemand.png" width="40%" style="display: block; margin: auto;" /&gt;
 
-- How do cities meet renewable energy targets in the future?
+---
 
 ## Assessing Spatial Scale
 
 - Most models assume a fixed spatial scale i.e. How much renewable energy can we supply in Hampshire?
-- 
+- What scale is required for renewable energy demand to meet supply?
 
+`$$\text{find } n\ \text{where}\ \sum_{j=1}^{n} E_{Demand} - E_{Supply} = 0$$`
 
 &lt;img src="images/ENSA.png" width="50%" style="display: block; margin: auto;" /&gt;
 
@@ -141,8 +139,8 @@ class: inverse, center, middle
 ]
 
 .pull-right[
-<div id="htmlwidget-db32784fbbf301da82f9" style="width:100%;height:460px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-db32784fbbf301da82f9">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[1,20],3,[]],"calls":[{"method":"addProviderTiles","args":["Esri.NatGeoWorldMap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMarkers","args":[[3.52,-1.16,1.3733],[11.31,36.48,32.2903],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Cameroon","Kenya","Uganda"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-1.16,3.52],"lng":[11.31,36.48]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-cd6f87f15318856a977e" style="width:100%;height:460px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cd6f87f15318856a977e">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"setView":[[1,20],3,[]],"calls":[{"method":"addProviderTiles","args":["Esri.NatGeoWorldMap",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMarkers","args":[[3.52,-1.16,1.3733],[11.31,36.48,32.2903],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},["Cameroon","Kenya","Uganda"],null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-1.16,3.52],"lng":[11.31,36.48]}},"evals":[],"jsHooks":[]}</script>
 ]
 
 ---
@@ -161,19 +159,19 @@ class: inverse, center, middle
 
 ---
 
-# R
+# Programming
 
 .pull-left[
 
 - Literate programming
-- R packages
-
-
+- R packages: **ggmapstyles** and **sotonthesis**
+- Documented and robust
+- Version Control
 ]
 
 .pull-right[
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="https://github.com/dr-harper/ggmapstyles/raw/master/man/figures/README-maps-1.png" alt="ggmapstyles package" width="100%" /&gt;
+&lt;img src="https://github.com/dr-harper/ggmapstyles/raw/master/man/figures/README-maps-1.png" alt="ggmapstyles package" width="80%" /&gt;
 &lt;p class="caption"&gt;ggmapstyles package&lt;/p&gt;
 &lt;/div&gt;
 ]
@@ -189,7 +187,8 @@ class: inverse, center, middle
 &lt;p class="caption"&gt;This presentation was brought to you by R Markdown&lt;/p&gt;
 &lt;/div&gt;
 
-Presentation at: https://dr-harper.github.io/intro-presentation/introPresentation.html
+This presentation was brought to you by R Markdown
+https://dr-harper.github.io/intro-presentation/introPresentation.html
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({

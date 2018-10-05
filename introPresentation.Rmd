@@ -62,10 +62,11 @@ read_csv("data/timeline.csv") %>%
 ```
 
 ---
+class: center
 
 # My PhD
 
-.center["*Spatial planning scale for regional renewable energy supply in the UK context*"]
+"*Spatial planning scale for regional renewable energy supply in the UK context*"
 
 ```{r wordcloud, out.width = "45%"}
 knitr::include_graphics("images/phdwordcloud.png")
@@ -175,28 +176,25 @@ knitr::include_graphics("images/turbineMap.png")
 knitr::include_graphics("images/gismcda.png")
 ```
 
-?
-- Assessing planning acceptance, economic viability and legislative constraints.
-- Formed a geospatial multi-criteria decision analysis model (GIS MCDA).
-- Based on outputs of first layer of analysis.
-
 ---
 
 ## Spatial Scale in Energy Systems
 
 - Energy systems are inherently spatial: demand and supply rarely happen at the same place.
+- How do cities meet renewable energy targets in the future?
 
 ```{r, out.width = "40%"}
 knitr::include_graphics("images/supplyDemand.png")
 ```
 
-- How do cities meet renewable energy targets in the future?
+---
 
 ## Assessing Spatial Scale
 
 - Most models assume a fixed spatial scale i.e. How much renewable energy can we supply in Hampshire?
-- 
+- What scale is required for renewable energy demand to meet supply?
 
+$$\text{find } n\ \text{where}\ \sum_{j=1}^{n} E_{Demand} - E_{Supply} = 0$$
 
 ```{r, out.width = "50%"}
 knitr::include_graphics("images/ENSA.png")
@@ -267,31 +265,29 @@ p <-
   geom_rect(data = shading, aes(xmin = Xmin, xmax = Xmax, ymin = Ymin, ymax = Ymax,  fill = Shading), alpha = 0.8) +
   scale_fill_manual(values = c("#91cf60", "#fc8d59", "#ffffbf")) +
   geom_point(data = interests, aes(Skill, Enjoyment)) +
-  ggrepel::geom_label_repel(data = interests, aes(Skill, Enjoyment, label = Item), nudge_x = 0.4) +
-  coord_equal(xlim = c(0,10), ylim = c(0,10)) +
+  ggrepel::geom_label_repel(data = interests, aes(Skill, Enjoyment, label = Item), nudge_x = 0.4, alpha = 0.7) +
+  scale_x_continuous(limits = c(0,10)) +
+  scale_y_continuous(limits = c(0,10)) +
   theme(legend.position = "none") +
   theme(panel.background = element_rect(fill = "#E9EDEE"),
-        plot.background = element_rect(fill = "#E9EDEE", colour = "#E9EDEE"),
-        legend.background  = element_rect(fill = "#E9EDEE", colour = "#E9EDEE"))
+        plot.background = element_rect(fill = "#E9EDEE", colour = "#E9EDEE"))
 p
 ```
 
 ---
 
-# R
+# Programming
 
 .pull-left[
 
 - Literate programming
-- R packages
+- R packages: **ggmapstyles** and **sotonthesis**
 - Documented and robust
 - Version Control
-
-
 ]
 
 .pull-right[
-```{r, fig.cap="ggmapstyles package", out.width = "100%"}
+```{r, fig.cap="ggmapstyles package", out.width = "80%"}
 knitr::include_graphics("https://github.com/dr-harper/ggmapstyles/raw/master/man/figures/README-maps-1.png")
 ```
 ]
@@ -306,5 +302,5 @@ class: inverse, center, middle
 knitr::include_graphics("images/rmarkdown.png")
 ```
 
-This presentation was brought to you by R Markdown:
+This presentation was brought to you by R Markdown
 https://dr-harper.github.io/intro-presentation/introPresentation.html
