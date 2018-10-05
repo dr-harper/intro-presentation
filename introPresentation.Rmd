@@ -269,7 +269,10 @@ p <-
   geom_point(data = interests, aes(Skill, Enjoyment)) +
   ggrepel::geom_label_repel(data = interests, aes(Skill, Enjoyment, label = Item), nudge_x = 0.4) +
   coord_equal(xlim = c(0,10), ylim = c(0,10)) +
-  theme(legend.position = "none")
+  theme(legend.position = "none") +
+  theme(panel.background = element_rect(fill = "#E9EDEE"),
+        plot.background = element_rect(fill = "#E9EDEE", colour = "#E9EDEE"),
+        legend.background  = element_rect(fill = "#E9EDEE", colour = "#E9EDEE"))
 p
 ```
 
@@ -281,12 +284,14 @@ p
 
 - Literate programming
 - R packages
+- Documented and robust
+- Version Control
 
 
 ]
 
 .pull-right[
-```{r, fig.cap="ggmapstyles pacakge" }
+```{r, fig.cap="ggmapstyles package", out.width = "100%"}
 knitr::include_graphics("https://github.com/dr-harper/ggmapstyles/raw/master/man/figures/README-maps-1.png")
 ```
 ]
@@ -300,3 +305,6 @@ class: inverse, center, middle
 ```{r, fig.cap="This presentation was brought to you by R Markdown", out.width = "50%"}
 knitr::include_graphics("images/rmarkdown.png")
 ```
+
+This presentation was brought to you by R Markdown:
+https://dr-harper.github.io/intro-presentation/introPresentation.html
