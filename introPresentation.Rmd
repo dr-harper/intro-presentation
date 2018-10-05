@@ -69,7 +69,7 @@ class: center
 "*Spatial planning scale for regional renewable energy supply in the UK context*"
 
 ```{r wordcloud, out.width = "45%"}
-knitr::include_graphics("images/phdwordcloud.png")
+knitr::include_graphics("https://github.com/dr-harper/intro-presentation/blob/master/images/phdWordcloud.png?raw=true")
 ```
 
 ---
