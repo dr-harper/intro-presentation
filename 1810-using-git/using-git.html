@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="author" content="Michael Harper" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="custom.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -12,66 +13,340 @@
 
 
 
-class: title-slide center
+class: title-slide middle
 
+.pull-left[
 # Git Started
 
-## 16 October, 2018
+-------
 
-## Michael Harper
+19 October, 2018
 
-&lt;img src="images/git-logo.png" width="50%" style="display: block; margin: auto;" /&gt;
+Michael Harper
+]
 
-.footer[These slides available at &lt;http://bit.ly/myslides&gt;]
-
----
-
-# Intro
-
----
-
-# Resources
-
+.pull-right[
+&lt;img src="images/git-logo.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
 
 ---
+# Overview
 
-# Benefits when working alone
+1. What is git?
+2. Why should be use it?
+3. Changes in Workflow
+4. Next Steps
 
+&gt; The presentation is **not a technical guide** on how to use git. Once you understand why to you should use it, it will make it easier to withstand the technical headaches which can occasionally happen.
 
+---
+# What is Git
+
+.pull-left[
+&gt;  Git is a piece of software that allows you to perform version control. Large projects require some piece of software to keep track of all the different changes made  in order to track things like: who edited a certain file; what they changed; and how to get back to the original code if necessary. 
+
+- *Git* and *GitHub* are often synonymous but there are several online hosting services available
+- Other services are available such as *GitLab*, *BitBucket* etc.
+]
+
+.pull-right[
+&lt;img src="images/gitLogos.png" width="60%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Common symptons of a need for git
+
+.pull-left[
+&lt;img src="images/checklist.png" width="60%" style="display: block; margin: auto;" /&gt;
+]
+
+--
+
+- You make **backups** of your code/project at semi-regular intervals
+
+--
+
+- Backups are made by copying all your code into a zip file
+
+--
+
+- You have **multiple people** working on the same project and need
+
+--
+
+- You want to **experiment** with new features of a code base
+
+--
+
+- You need to occasionaly **rerun old versions** of analysis
+
+--
+
+- You work with Michael Harper
+
+---
+# File Management Mayham Montage
+
+.pull-left[
+Examples of my own workflow before I discovered the full benefits of *git*!
+
+- Random naming conventions of files
+- Versioning of code by copying
+- Having no backup copies can be just as much of a problem as having too many backups.
+]
+
+.pull-right[
+&lt;img src="images/fileChanges.png" width="120%" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="images/fileChanges2.png" width="120%" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="images/fileChanges3.png" width="120%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# How Git Works
+
+.pull-left[
+
+- Code stored on a central **repository**
+- Each collaborator connects to repository and has a **local copy** of files
+- **Edit** our own copies locally
+- Changes be **committed** to the central repository
+
+]
+
+.pull-right[
+&lt;img src="images/centralized-vc.png" width="130%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+class: center, middle
+
+&lt;img src="images/git-basics.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+# Be clear about file changes
+
+.pull-left[
+Traditional file management only tells us a small portion of what we need to know. Git forces us to be explicit in our changes:
+
+- **Who** made the changes?
+- **What** happened?
+- **Where** were the changes made?
+- **When** did it take place?
+- **Why** did that happen?
+
+When we make changes with *git*, we must be explicit about the changes we made.
+]
+
+.pull-right[
+&lt;img src="images/fiveW.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Adding New Features
+
+- We can add a **fork** which allows us to develop a new branch of the project
+- Lets us test ideas without breaking the main branch
+- Once feature is ready, we can merge the changes with the original code
+
+&lt;img src="images/branching.png" width="100%" style="display: block; margin: auto;" /&gt;
 
 ---
 class: inverse, center, middle
-
 # Changes in Workflow
 
 &lt;img src="images/workflow.png" width="30%" style="display: block; margin: auto;" /&gt;
 
 ---
+# Sharing of Code
 
-## Separating Data and Code
+.pull-left[
+
+**Existing**:
+
+- *"Currently if someone else wants to work on code, the main person has to “pause” on their analysis so that we can keep track of the changes"*
+- No more WorldPop drive or emails!
+- Quickly lose control over the versions and which is the most up-to-date
+
+**With GitHub**:
+
+- Repositories can be **public** or **private**
+- We can invite collaborators to our projects
+- Rather than emailing code, we can direct them to website
+- Always has the latest version of the code
+]
+
+
+.pull-right[
+&lt;img src="images/repo-with-readme.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Separating Data and Code
+
+.pull-left[
+
+**Existing**:
+
+- code and data often live in the same folder
+- Can make sharing things difficult without sending the whole directory
+- Duplicate datasets
+
+**The GitHub way**:
 
 - *git* is designed primarly for **code** storage &amp; outputs
-- 
+- **Data** must be stored elsewhere and linked to from the repository.
+  - Shared Drives
+  - Web Servers
+
+]
+
+.pull-right[
+&lt;img src="images/data.svg" width="100%" style="display: block; margin: auto;" /&gt;
+]
 
 ---
+# Versioning
 
-## Collaborative Report Writing
+.pull-left[
+
+**Existing:**
+
+- Backup our code
+- Change file names to append versions
 
 
+**The GitHub Way**:
 
+- We can add versions to the code to flag releases
+- Add notes about what changes happened at our release
+- Important if we release data that we can reproduce the results
+]
+
+.pull-right[
+&lt;img src="images/releases.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
 
 ---
+# More Open Coding
 
-## Other Issues?
+.pull-left[
 
+**Existing:**
 
+- Code in isolation
+- Difficult to share and get input from others
+- Encourages bad practise
+
+**The GitHub Way**:
+
+- Github encourages more open programming
+- Easily share your code with others
+- Forces us to think at an early stage how we might make it easier for others to use
+]
+
+.pull-right[
+&lt;img src="images/codeImage.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
 
 ---
+# Tracking Issues
+
+.pull-left[
+
+**Existing:**
+
+- Emails
+- READMEs?
+
+**The GitHub Way**:
+
+- We can add **Issues** directly the repository
+- Flag known bugs
+- Discuss solutions to problems, request input from others
+- Prioritise which to target first
+]
+
+.pull-right[
+&lt;img src="images/issues_landing_page.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+class: inverse, center, middle
+# Looking Beyond the Basics
+
+&lt;img src="images/rocket.png" width="35%" style="display: block; margin: auto;" /&gt;
+
+What opportunities does GitHub offer?
+
+---
+# Automated Testing
+
+.pull-left[
+- We can integrate third-party services to our repositories
+- Continuous integration (CI) allows for updates and tests to be automated
+- If someone makes changes to the code which breaks it, you will know before it gets deployed
+]
+
+.pull-right[
+&lt;img src="images/continuousIntegration.png" width="60%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Documentation
+
+- Can use GitHub to deploy websites for package documentation.
+- Example of [polyCheck](https://grid3.github.io/polyCheck/) package
+
+&lt;img src="images/polyCheck.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+---
+class: inverse, center, middle
+# Next Steps
+
+---
+# Potential Hurdles
+
+.pull-left[
+- Technical learning curve
+- Restructuring of projects
+- Interaction with non-technical partners
+
+]
+
+.pull-right[
+&lt;img src="https://media0.giphy.com/media/xTiTnooneW4SYfch8Y/giphy.gif?cid=3640f6095bc9b96749355572671b42da" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Getting Started
+
+.pull-left[
+- Encourage you to set up personal projects before joining a group project
+- Git can be controlled by command line, but [GitHub Desktop](https://desktop.github.com/) is very useful
+- There are good online resources
+- Further training to be provided in future seminars
+]
+
+.pull-right[
+**Pro Git**: free download of eBook on Amazon: http://amzn.eu/d/4Uvv5Tc
+
+&lt;img src="https://images-na.ssl-images-amazon.com/images/I/41qIcWnG8-L._SX404_BO1,204,203,200_.jpg" width="60%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+class: inverse, center, middle
+# Any Questions?
+
+
+&lt;img src="images/git-logo.png" width="50%" style="display: block; margin: auto;" /&gt;
     </textarea>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
 "highlightStyle": "github",
-"ratio": "16:9"
+"ratio": "16:9",
+"slideNumberFormat": "<div class=\"progress-bar-container\">   <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">   </div> </div>` "
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));

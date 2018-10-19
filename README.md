@@ -1,17 +1,17 @@
 
-A repository for presnetations. More to be added soon!
+A repository for presentations. More to be added soon!
 
 My Presentations
 ----------------
 
--   [A life in graphics](20181005-intro-presentation/introPresentation.html): an introduction presentation used when starting at work at Flowminder.
+-   [A life in graphics](1810-intro/introPresentation.html): an introduction presentation used when starting at work at Flowminder.
 
 Making the Presentations
 ========================
 
 The presentations are written using **rmarkdown** (Allaire et al. 2018) and the presentation package **xaringan** (Xie 2018). More can be found out about this presentation format within the [R Markdown Definitve Guide](https://bookdown.org/yihui/rmarkdown/xaringan.html).
 
-If you are interested in seeing how the presentations were written, feel free to review the sourcecode of this repository: <https://github.com/dr-harper/presentations>
+If you are interested in seeing how the presentations were written, feel free to review the source code of this repository: <https://github.com/dr-harper/presentations>
 
 References
 ==========
