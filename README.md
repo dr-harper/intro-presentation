@@ -5,6 +5,7 @@ My Presentations
 ----------------
 
 -   [A life in graphics](1810-intro/introPresentation.html): an introduction presentation used when starting at work at Flowminder.
+-   [Introducing Git](1810-using-git/using-git.html)
 
 Making the Presentations
 ========================
