@@ -4,8 +4,13 @@ A repository for presentations. More to be added soon!
 My Presentations
 ----------------
 
+<img src="1810-intro/intro.png" alt="alt text" width="200px">
+
 -   [A life in graphics](1810-intro/introPresentation.html): an introduction presentation used when starting at work at Flowminder.
--   [Introducing Git](1810-using-git/using-git.html)
+
+<img src="1810-using-git/using-git.png" alt="alt text" width="200px">
+
+-   [Introducing Git](1810-using-git/using-git.html): a non-technical introduction to the benefits of *git*.
 
 Making the Presentations
 ========================
