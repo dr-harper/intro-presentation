@@ -45,7 +45,20 @@ knitr::include_graphics("images/cv.png")
 
 ```{r, fig.asp = 0.5, out.width="80%"}
 
-read_csv("data/timeline.csv") %>%
+tibble::tribble(
+  ~Year, ~Geek, ~Mathematician, ~Engineer, ~Statistician, ~Programmer, ~Geographer,
+   2008,   0.5,            0.3,       0.2,             0,           0,           0,
+   2009,   0.4,            0.3,       0.3,             0,           0,           0,
+   2010,   0.3,            0.1,       0.6,             0,           0,           0,
+   2011,   0.2,              0,       0.8,             0,           0,           0,
+   2012,  0.15,              0,      0.85,             0,           0,           0,
+   2013,   0.2,              0,       0.7,             0,         0.1,           0,
+   2014,   0.3,              0,       0.6,             0,         0.1,           0,
+   2015,   0.4,              0,       0.2,             0,         0.1,         0.2,
+   2016,   0.3,              0,       0.1,           0.1,         0.2,         0.3,
+   2017,  0.25,              0,      0.05,           0.2,         0.4,         0.2,
+   2018,  0.25,              0,         0,           0.2,        0.35,         0.2
+  ) %>%
   gather("Attribute", "Value", 2:7) %>%
   mutate(Attribute = factor(Attribute, levels = c("Programmer", "Geographer", "Engineer", "Statistician", "Mathematician", "Geek"))) %>%
   ggplot(aes(Year, Value, fill = Attribute)) +
@@ -69,7 +82,7 @@ class: center
 "*Spatial planning scale for regional renewable energy supply in the UK context*"
 
 ```{r wordcloud, out.width = "45%"}
-knitr::include_graphics("https://github.com/dr-harper/presentations/blob/master/20181005-intro-presentation/images/phdWordcloud.png?raw=true")
+knitr::include_graphics("images/phdWordcloud.png")
 ```
 
 ---
@@ -264,7 +277,7 @@ p <-
   geom_rect(data = shading, aes(xmin = Xmin, xmax = Xmax, ymin = Ymin, ymax = Ymax,  fill = Shading), alpha = 0.8) +
   scale_fill_manual(values = c("#91cf60", "#fc8d59", "#ffffbf")) +
   geom_point(data = interests, aes(Skill, Enjoyment)) +
-  ggrepel::geom_label_repel(data = interests, aes(Skill, Enjoyment, label = Item), nudge_x = 0.4, alpha = 0.7) +
+  ggrepel::geom_label_repel(data = interests, aes(Skill, Enjoyment, label = Item), nudge_x = 0.4, alpha = 0.7, size = 8) +
   scale_x_continuous(limits = c(0,10)) +
   scale_y_continuous(limits = c(0,10)) +
   theme(legend.position = "none") +
