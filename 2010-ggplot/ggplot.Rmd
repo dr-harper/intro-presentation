@@ -1,7 +1,8 @@
 ---
 title: "Visualisation with ggplot2"
-author: "Michael Harper, Adapted from Florian Privé"
+subtitle: "Michael Harper"
 date: "4th November 2020"
+author: "Content Adapted from Florian Privé"
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
@@ -22,11 +23,13 @@ knitr::opts_chunk$set(message = FALSE, fig.align = "center", dev = "svg", out.wi
 ```
 
 class: center, top, inverse
-background-image: url(http://hexb.in/vector/ggplot2.svg)
-background-position: 50% 80%
-background-size: 40%
 
 # http://ggplot2.tidyverse.org/
+
+```{r, echo = F, out.width="40%"}
+knitr::include_graphics("http://hexb.in/vector/ggplot2.svg")
+```
+
 
 ---
 
@@ -215,7 +218,7 @@ fertilityTidy <- fertilityData %>%
 
 ```
 
-```{r}
+```{r, echo = F}
 knitr::kable(head(fertilityTidy))
 ```
 
@@ -241,7 +244,7 @@ ggplot(data = fertilityTidy) +
 
 ---
 
-## Drop extra typing
+### Drop extra typing
 
 Most of the time people drop the `mapping` and `data` typing:
 
@@ -252,7 +255,7 @@ ggplot(fertilityTidy) +
 
 ---
 
-## Add colors
+### Add colors
 
 Add a `colour` aes to the `geom_point`:
 
@@ -263,7 +266,7 @@ ggplot(fertilityTidy) +
 
 ---
 
-## Add lines: add one geom
+### Add lines: add one geom
 
 We can easily add multiple geometries to the graph:
 
@@ -305,7 +308,7 @@ class: center, middle, inverse
 
 ---
 
-## Iris: base dataset of R
+### Iris: base dataset of R
 
 For these examples we will use `iris` dataset:
 
@@ -315,7 +318,7 @@ knitr::kable(head(iris, n = 10))
 
 ---
 
-## Layers: example with geom_smooth()
+### Layers: example with geom_smooth()
 
 ```{r fig.asp = 0.7}
 ggplot(iris, aes(Petal.Length, Petal.Width)) + 
@@ -419,7 +422,8 @@ We can customise the appearance of the plots using `theme`.
 ggplot(fertilityTidy, aes(Year, Fertility, color = Country)) + 
   geom_point(size = 4) +
   geom_line(size = 3) +
-  theme(aspect.ratio = 0.8, legend.key.width = unit(3, "line"))
+  theme(legend.key.width = unit(3, "line"),
+        panel.background = element_rect(fill = "grey20"))
 ```
 
 ---
@@ -448,11 +452,19 @@ However there is a great package for themes call **ggthemr**.
 
 ```{r, echo = FALSE, out.width="100%", fig.asp=0.4}
 
+p <- ggplot(iris) + 
+  geom_point(aes(Petal.Length, Petal.Width, 
+                 color = Species, shape = Species), size = 3)
+
 # If looking at this code, don't use it like this. It is much better just to set it globally at the start of your script
-p1 <- p + labs(title = "dust") + ggthemr::ggthemr('dust', set_theme = FALSE)$theme
-p2 <- p + labs(title = "light") + ggthemr::ggthemr('light', set_theme = FALSE)$theme
-p3 <- p + labs(title = "flat") + ggthemr::ggthemr('flat', set_theme = FALSE)$theme
-p4 <- p + labs(title = "chalk") + ggthemr::ggthemr('chalk', set_theme = FALSE)$theme
+p1 <- p + labs(title = "dust") + ggthemr::ggthemr('dust', set_theme = FALSE)$theme +
+  theme(legend.position = "none")
+p2 <- p + labs(title = "light") + ggthemr::ggthemr('light', set_theme = FALSE)$theme +
+  theme(legend.position = "none")
+p3 <- p + labs(title = "flat") + ggthemr::ggthemr('flat', set_theme = FALSE)$theme +
+  theme(legend.position = "none")
+p4 <- p + labs(title = "chalk") + ggthemr::ggthemr('chalk', set_theme = FALSE)$theme +
+  theme(legend.position = "none")
 
 p1 + p2 + p3 + p4 + plot_layout(nrow = 1)
 
@@ -460,7 +472,7 @@ p1 + p2 + p3 + p4 + plot_layout(nrow = 1)
 
 ---
 
-## Layout Combine plots with patchwork
+### Layout Combine plots with patchwork
 
 Additional package **patchwork** used for plotting. Allows you to output multiple plots by using `+` between ggplot objects:
 
@@ -486,7 +498,7 @@ class: center, middle, inverse
 
 ---
 
-## Interactive plots
+### Interactive plots
 
 ```{r, out.width="80%", fig.asp=0.7, cache=FALSE}
 p <- ggplot(iris, aes(Petal.Length, Petal.Width, 
@@ -504,7 +516,7 @@ class: center, middle, inverse
 
 ---
 
-## Comparison with seaborn / matplotlib 
+### Comparison with seaborn / matplotlib 
 
 Say we want to get our output:
 
@@ -516,7 +528,7 @@ knitr::include_graphics("images/seabornExample.png")
 
 ---
 
-## Comparison with seaborn / matplotlib
+### Comparison with seaborn / matplotlib
 
 Wriiting this in Seaborn / Matplotlib:
 
@@ -541,7 +553,7 @@ ax = sns.boxplot('variable', 'value', data = df_melt
 
 ---
 
-## Comparison with seaborn / matplotlib (2)
+### Comparison with seaborn / matplotlib (2)
 
 ```{}
 # the boxes are drawn onto the axis as artist objects
@@ -562,7 +574,7 @@ plt.legend(handles[0:3], labels[0:3]
 
 ---
 
-## Comparison with seaborn / matplotlib (4)
+### Comparison with seaborn / matplotlib (4)
 
 How to do it in ggplot
 
@@ -573,21 +585,22 @@ df_melt <-
 
 ggplot(df_melt, aes(x = variable, y = value, fill = Species)) +
   geom_boxplot(width = 1, alpha = 0, colour = "grey30") +
-  geom_violin(width = 1) +
+  geom_violin(width = 1, trim = F, scale = "width", alpha = 0.5) +
   theme(legend.position =  "top")
 ```
 
 ---
 
-## Integration with Python
+### Integration with Python
 
-Given that most our data science workflows are in Python, how could this integrate?
-
-Could the be used in conjunction with typical workflows?
+- Given that most our data science workflows are in Python, how could this integrate?
+- Could the be used in conjunction with typical workflows?
+- `rpy2` library to link R and Python: https://stackoverflow.com/questions/35152395/using-r-in-python-with-rpy2-how-to-ggplot2
+- `plotnine` as a Python implementation of ggplot: https://plotnine.readthedocs.io/en/stable/
 
 ---
 
-## Learn more
+### Learn more
 
 - [Chapter *Data Visualisation*](http://r4ds.had.co.nz/data-visualisation.html) of R For Data Science
 - [The ggplot book](https://ggplot2-book.org/)
@@ -605,7 +618,7 @@ Could the be used in conjunction with typical workflows?
 
 ---
 
-## Miscellaneous
+### Miscellaneous
 
 - [Pie charts](https://guangchuangyu.github.io/2016/12/scatterpie-for-plotting-pies-on-ggplot/) but [others plots are often better](http://annkemery.com/pie-chart-guidelines/)
 
@@ -638,7 +651,7 @@ class: center, middle, inverse
 
 Presentation available at
 
-https://privefl.github.io/R-presentation/ggplot2.html
+https://dr-harper.github.io/presentations/2010-ggplot/ggplot.html
 
 <br>
 
