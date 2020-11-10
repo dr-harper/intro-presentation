@@ -30,10 +30,20 @@ knitr::include_graphics("images/ggplot2.svg")
 
 ---
 
+## Introduction
+
+- Start with some example results!
+- The grammar of graphics
+- Basics of ggplot
+- Useful extensions
+- Integrations with python
+- Extra reading and useful links
+
+---
+
 class: center, middle, inverse
 
 > "The simple graph has brought more information to the data analyst’s mind than any other device." --- John Tukey
-
 
 ---
 
@@ -56,6 +66,32 @@ Or on the BBC Covid updates:
 knitr::include_graphics("images/covidChart.png")
 ```
 ]
+
+---
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("images/covidMap.png")
+```
+
+.pull-left[
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("images/mobilityMap.jfif")
+```
+]
+
+.pull-right[
+```{r,  echo=FALSE, out.width="100%"}
+knitr::include_graphics("images/energyGraph.png")
+```
+]
+
+---
+
+```{r,  echo=FALSE, out.width="100%"}
+knitr::include_graphics("images/RenewableMap.png")
+```
+
+
 
 ---
 
