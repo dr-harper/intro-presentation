@@ -18,6 +18,11 @@ library(patchwork)
 library(plotly)
 
 knitr::opts_chunk$set(message = FALSE, fig.align = "center", dev = "svg", out.width = "50%")
+
+
+xaringanExtra::use_tile_view()
+xaringanExtra::use_share_again()
+
 ```
 
 class: center, top, inverse
@@ -26,6 +31,7 @@ class: center, top, inverse
 
 ```{r, echo = F, out.width="40%"}
 knitr::include_graphics("images/ggplot2.svg")
+
 ```
 
 ---
@@ -107,7 +113,10 @@ class: center, middle, inverse
 of a graphic. Such a grammar allows us to move beyond named graphics (e.g., the “scatterplot”) and gain insight into the deep structure that underlies statistical graphics"*. [Hadley Wickham](https://byrneslab.net/classes/biol607/readings/wickham_layered-grammar.pdf) 
 
 .pull-left[
-<img src="https://www.ericchowkokyew.com/wp-content/uploads/2019/07/image-2.png" width=200 height=300>
+```{r}
+knitr::include_graphics("images/grammar.png")
+```
+
 ]
 
 .pull-right[
