@@ -27,6 +27,9 @@ library(tidyverse)
 library(plotly)
 library(leaflet)
 library(htmltools)
+
+xaringanExtra::use_tile_view()
+xaringanExtra::use_share_again()
 ```
 
 # My History
